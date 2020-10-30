@@ -4,9 +4,9 @@ class LinkedList:
       self.data = data
       self.next = None
 
-  def __init__(self):
-    self.head = None
-    self.tail = None
+  def __init__(self, head=None, tail=None):
+    self.head = head
+    self.tail = tail
 
   def append(self, data):
     new_node = self.Node(data)
@@ -31,6 +31,7 @@ class LinkedList:
   # def pop_tail(self):
   #   self.tail = self.head.next
 
+  # broken method
   def pop_at_index(self, index_to_pop):
     current_node = self.head
     current_index = 0
@@ -59,4 +60,7 @@ class LinkedList:
       current_node = current_node.next 
 
     return answer
+  
+  def clone(self):
+    return LinkedList(self.head, self.tail)
     
