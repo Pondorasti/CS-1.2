@@ -106,26 +106,26 @@ class LinkedList:
         self.head = new_head
             
 
+if __name__ == "__main__":
+    songs = LinkedList()
 
-songs = LinkedList()
+    songs.append("Black Betty")
+    songs.append("Sweater Weather")
+    songs.prepend("Be happy")
+    songs.append("Sam")
+    songs.prepend("Rafa")
 
-songs.append("Black Betty")
-songs.append("Sweater Weather")
-songs.prepend("Be happy")
-songs.append("Sam")
-songs.prepend("Rafa")
+    # songs.delete_head()
+    # songs.delete_tail()
+    # songs.delete_tail()
 
-# songs.delete_head()
-# songs.delete_tail()
-# songs.delete_tail()
+    # songs.delete_tail()
+    # songs.delete_tail()
+    # songs.delete_tail()
 
-# songs.delete_tail()
-# songs.delete_tail()
-# songs.delete_tail()
+    # print(songs.find("Be Happy"))
 
-# print(songs.find("Be Happy"))
+    # songs.delete("Sam")
 
-# songs.delete("Sam")
-
-songs.reverse()
-songs.print()
+    songs.reverse()
+    songs.print()
