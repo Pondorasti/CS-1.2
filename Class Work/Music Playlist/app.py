@@ -64,16 +64,37 @@ class LinkedList:
             node = node.next
         
         return False
+    
+    def delete(self, data): 
+        """Delete the first occurence of data"""
+        node = self.head
 
+        if node is None:
+            return 
+        if node.data == data:
+            self.delete_head()
+            return 
+        if node.next is None:
+            return 
 
+        while node.next is not None:
+            if node.next.data == data:
+                if node.next is None:
+                    self.delete_tail()
+                    return
+                
+                node.next = node.next.next 
+                return
+
+            node = node.next
 
 songs = LinkedList()
 
-songs.append("Black Betty")
-songs.append("Sweater Weather")
-songs.prepend("Be happy")
+# songs.append("Black Betty")
+# songs.append("Sweater Weather")
+# songs.prepend("Be happy")
 songs.append("Sam")
-songs.prepend("Rafa")
+# songs.prepend("Rafa")
 
 # songs.delete_head()
 # songs.delete_tail()
@@ -83,6 +104,8 @@ songs.prepend("Rafa")
 # songs.delete_tail()
 # songs.delete_tail()
 
-print(songs.find("Be Happy"))
+# print(songs.find("Be Happy"))
 
-# songs.print()
+songs.delete("Sam")
+
+songs.print()
