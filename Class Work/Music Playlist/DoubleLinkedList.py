@@ -27,9 +27,6 @@ class DoubleLinkedList:
         
         new_node = self.Node(data, previous=node)
         node.next = new_node
-    
-    def prepend(self, data):
-        pass
 
     def __str__(self):
         result = ""

@@ -45,7 +45,7 @@ class LinkedList:
         if node is None:
             return 
         if node.next is None:
-            self.head = None
+            self.delete_head()
             return
         
         while node.next.next is not None:
