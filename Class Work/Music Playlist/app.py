@@ -88,13 +88,32 @@ class LinkedList:
 
             node = node.next
 
+    def reverse(self):        
+        old_head = self.head
+        new_head = None
+        buffer_node = None
+        while old_head is not None:
+            # V1
+            # new_head = self.Node(old_head.data, new_head)
+            # old_head = old_head.next
+
+            # V2
+            buffer_node = old_head.next
+            old_head.next = new_head
+            new_head = old_head
+            old_head = buffer_node
+        
+        self.head = new_head
+            
+
+
 songs = LinkedList()
 
-# songs.append("Black Betty")
-# songs.append("Sweater Weather")
-# songs.prepend("Be happy")
+songs.append("Black Betty")
+songs.append("Sweater Weather")
+songs.prepend("Be happy")
 songs.append("Sam")
-# songs.prepend("Rafa")
+songs.prepend("Rafa")
 
 # songs.delete_head()
 # songs.delete_tail()
@@ -106,6 +125,7 @@ songs.append("Sam")
 
 # print(songs.find("Be Happy"))
 
-songs.delete("Sam")
+# songs.delete("Sam")
 
+songs.reverse()
 songs.print()
