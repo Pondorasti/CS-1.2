@@ -9,8 +9,11 @@ class DoubleLinkedList:
         def __str__(self):
             return self.data
     
-    def __init__(self):
+    def __init__(self, *args):
         self.head = None
+
+        for data in args:
+            self.append(data)
     
     def append(self, data):
         node = self.head
@@ -40,7 +43,7 @@ class DoubleLinkedList:
 
 
 if __name__ == "__main__":
-    dll_songs = DoubleLinkedList()
+    dll_songs = DoubleLinkedList("Sunny", "Cloudy")
 
     dll_songs.append("Alex")
     dll_songs.append("Tian")
