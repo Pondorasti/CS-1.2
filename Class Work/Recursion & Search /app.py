@@ -30,3 +30,18 @@ def binary_search(array, target):
 
 a = [3,4,5,6,10,12,20]
 print(binary_search(a, 5))
+
+
+
+
+
+def recursive_fibonacci(index, current_index = 1, first = 0, second = 1):
+    if index == 0:
+        return 0
+    elif index == current_index:
+        return second
+    else:
+        return recursive_fibonacci(index, current_index = current_index + 1, first = second, second = first + second)
+
+
+print(recursive_fibonacci(0))

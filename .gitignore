@@ -2,3 +2,5 @@
 .DS_Store
 
 Class Work/Linked List/__pycache__/
+
+*.pyc
