@@ -11,7 +11,6 @@ class LinkedList:
         new_node = self.Node(data)
         if self.head is None:
             self.head = new_node
-            print("poof")
             return
 
         node = self.head
