@@ -8,10 +8,14 @@ class Graph():
         self.edges.append(item)
 
   def __init__(self, json):
-    self._nodes = []
+    self._nodes = {}
     self._jsonToGraph(json)
 
   def _jsonToGraph(self, json):
     for node in json:
-      new_node = self.Node(node['name'], *node['prerequisites'])
-      self._nodes.append(new_node)
+      data = node['name']
+      new_node = self.Node(data, *node['prerequisites'])
+      self._nodes[data] = new_node
+    
+  def number_edges(self, data):
+    return len(self._nodes[data].edges)
