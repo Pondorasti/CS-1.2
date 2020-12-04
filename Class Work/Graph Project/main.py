@@ -10,3 +10,4 @@ with open("test.json") as test:
 courses_graph = Graph(data)
 
 print(numPrereqs(courses_graph, "FEW 2.3"))
+courses_graph.traversal_order()

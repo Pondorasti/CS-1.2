@@ -19,3 +19,26 @@ class Graph():
     
   def number_edges(self, data):
     return len(self._nodes[data].edges)
+  
+  def traversal_order(self):
+    visited = {}
+    components = {}
+    index = 0
+
+    def dfs(node):
+      visited[node.data] = index 
+      for edge in node.edges:
+        if visited.get(edge) is not None and visited[edge] != index:
+          components.pop(visited[edge], None)
+        
+        dfs(self._nodes[edge])
+      
+      components[index].append(node.data)
+    
+    
+    for node in self._nodes:
+      components[index] = []
+      dfs(self._nodes[node])
+      index += 1
+    
+    print(components)
